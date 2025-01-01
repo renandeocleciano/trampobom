@@ -1,0 +1,45 @@
+
+<div class="row">
+    <aside class="col col-xl-3 order-xl-1 col-lg-12 order-lg-1 col-12">
+         <div class="box mb-3 rounded bg-white profile-box text-center">
+
+            <div class="py-4 px-3 border-bottom">
+               {{> components/profileimage imgprofile=user.imgprofile hasimage=user.hasPicture }}
+               
+                <h5 class="font-weight-bold text-dark mb-1 mt-4">{{ user.personalInfo.firstName }} {{ user.personalInfo.lastName }}</h5>
+                <p class="mb-0 text-muted">{{ user.lastJob.office }}</p>
+            </div>
+
+           <div class="d-flex">
+                <div class="col-6 border-right p-3">
+                    <h6 class="font-weight-bold text-dark mb-1">358</h6>
+                    <p class="mb-0 text-black-50 small">Indicações</p>
+                </div>
+                <div class="col-6 p-3">
+                    <h6 class="font-weight-bold text-dark mb-1">85</h6>
+                    <p class="mb-0 text-black-50 small">CV-Venviado</p>
+                </div>
+            </div> 
+            <div class="overflow-hidden border-top">
+                <a class="font-weight-bold p-3 d-block" href="/auth/logout"> Log Out </a>
+            </div>
+        </div>
+        {{> components/socialnetwork social = user.social }}
+        {{> components/personalInfo residentialInfo = user.residentialInfo }}
+    </aside>
+
+    <main class="col col-xl-6 order-xl-2 col-lg-12 order-lg-2 col-md-12 col-sm-12 col-12">
+       {{> components/aboutme 
+            about-text = user.aboutMe
+        }}
+       {{> components/professional
+            professionalInfo = user.professionalInfo
+         }}
+       {{> components/educacional schoolInfo=user.schoolInfo}}
+       
+    </main>
+
+    <aside class="col col-xl-3 order-xl-3 col-lg-12 order-lg-3 col-12">
+         {{> components/courses courses=user.courses}}
+    </aside>
+</div>

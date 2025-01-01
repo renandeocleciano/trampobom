@@ -1,0 +1,77 @@
+<div class="box rounded mb-3 bg-white">
+    <div class="box-title border-bottom p-3">
+        <h6 class="m-0">Experiencias Profissionais
+            <a href="#" class="float-right" data-toggle="modal" data-target="#modalProfessionalInfo">
+                <i class="">+</i>
+            </a>
+        </h6>
+    </div>
+    {{#if professionalInfo }}
+    {{#each professionalInfo}}
+    <div class="box-body p-3 border-bottom">
+        <div class="d-flex align-items-top job-item-header pb-2">
+            <div class="mr-2">
+                <h6 class="font-weight-bold text-dark mb-0">{{ this.office }}</h6>
+                <div class="text-truncate text-primary">{{ this.company }}</div>
+                <div class="small text-gray-500">{{#showDateDif s=this.start_date e=this.end_date}} {{/showDateDif}}
+                </div>
+            </div>
+            <a href="/user/removeprofessionalinfo/{{this._id}}" class="img-fluid ml-auto mb-auto">excluir</a>
+        </div>
+        <p class="mb-0">{{ this.description }}</p>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
+
+
+<!-- Modal - Professional Info -->
+<div class="modal fade" id="modalProfessionalInfo" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Informações Profissionais</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/user/professionalinfo" method="post">
+                <div class="modal-body">
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label>Nome da Empresa</label>
+                            <input type="text" class="form-control" placeholder="Nome da empresa" name="pf_company"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label>Cargo</label>
+                            <input type="text" class="form-control" placeholder="Cargo" name="pf_office" required>
+                        </div>
+                    </div>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label>Data de Início</label>
+                            <input type="date" class="form-control" placeholder="Data de Inicio" name="pf_startdate"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label>Data de Saida</label>
+                            <input type="date" class="form-control" placeholder="Data de Saida" name="pf_enddate">
+                            <small>Deixe em branco, caso esteja na empresa.</small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label>Conte um pouco do seu trabalho</label>
+                            <textarea class="form-control" name="pf_description" rows=5></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

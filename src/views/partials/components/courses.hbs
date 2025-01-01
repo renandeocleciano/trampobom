@@ -1,0 +1,81 @@
+<div class="box rounded mb-3 bg-white">
+    <div class="box-title border-bottom p-3">
+        <h6 class="m-0">Cursos Extras
+            <a href="#" class="float-right" data-toggle="modal" data-target="#modalCourses">
+                <i class="">+</i>
+            </a>
+        </h6>
+    </div>
+    <div class="box-body p-3">
+        {{#if courses }}
+        {{#each courses}}
+        <div class="box-body p-3 border-bottom">
+            <div class="d-flex align-items-top job-item-header pb-2">
+                <div class="mr-2">
+                    <h6 class="font-weight-bold text-dark mb-0">{{ this.name }}</h6>
+                    <div class="text-truncate text-primary">{{ this.institution }}</div>
+                    <div class="small text-gray-500">
+                        {{#showMonthAndYear  s=this.start_date e=this.end_date }}{{/showMonthAndYear}}
+                    </div>
+                </div>
+                 <a href="/user/removecourses/{{this._id}}" class="img-fluid ml-auto mb-auto">excluir</a>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+</div>
+
+
+<!-- Modal - School Info -->
+<div class="modal fade" id="modalCourses" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Informações Educacionais</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/user/courses" method="post">
+                <div class="modal-body">
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label>Nome da Instituição</label>
+                            <input type="text" class="form-control" placeholder="Nome da Instituição"
+                                name="si_institution" required>
+                        </div>
+                    </div>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label>Nome do Curso</label>
+                            <input type="text" class="form-control" placeholder="Nome do Curso" name="si_name" required>
+                        </div>
+                    </div>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label>Data de Início</label>
+                            <input type="date" class="form-control" placeholder="Data de Inicio" name="si_startdate"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label>Data do Término/Previsão</label>
+                            <input type="date" class="form-control" placeholder="Data do Término/Previsão"
+                                name="si_enddate" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label>Descrição</label>
+                            <textarea class="form-control" name="si_description" rows=5></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

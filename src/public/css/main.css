@@ -1,0 +1,282 @@
+body{
+	font-family: 'Lato', sans-serif;
+  line-height: 26px;
+	color: #6d6e71;
+  font-size: 13px;
+  background: #edf2f6;
+}
+
+
+/*==================================================
+  Typography
+  ==================================================*/
+
+@font-face {
+    font-family:"Agency FB";
+    src: url("../fonts/agency-fb.ttf") /* TTF file for CSS3 browsers */
+}
+
+h1, h2, h3, h4, h5, h6{color: #27aae1;}
+
+h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey{
+  color: #6d6e71;
+  margin: 0 auto 20px;
+}
+
+.text-white{color: #fff;}
+
+.text-white:hover{color: #fff;}
+
+.text-green{color: #8dc63f;}
+
+.text-green:hover{color: #39b54a;}
+
+.text-red{color: #ef4136;}
+
+.text-red:hover{color: #d6100b;}
+
+.profile-link{font-weight: 600;}
+
+.text-muted{color: #939598;}
+
+a{color: #27aae1; text-decoration: none !important;}
+
+a:hover{color: #149AC9;}
+
+a, a:active, a:focus {outline: none;}
+
+
+/* Commom */
+
+.margin-zero {
+    margin: 0 auto;
+}
+
+.form-control{
+    background: #fff;
+    border: 1px solid #f1f2f2;
+    box-shadow: none;
+    color: #939598;
+    font-size: 13px;
+  }
+
+.form-control:focus {
+    border-color: #27aae1;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.or-seperator {
+    margin-top: 32px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+.or-seperator b {
+    color: #666;
+    padding: 0 7px;
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 26px;
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    position: relative;
+    top: -15px;
+    z-index: 1;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/* Components */
+
+.box {
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+  transition: box-shadow 83ms;
+}
+
+#upload-image{
+	width: 250px;
+	height: 250px;
+  padding-bottom:25px;
+}
+
+input.file{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  margin-top:-35px;
+}
+
+/* Elements */
+
+.btn-primary{
+	background: #27aae1;
+	padding: 7px 25px;
+	border: none;
+	font-size: 14px;
+	border-radius: 4px;
+	color: #fff;
+	position: relative;
+    font-weight: 600;
+    outline: none;
+}
+
+.btn-primary:hover{
+  background: #149AC9;
+  transition: all 1s;
+}
+
+.navbar-header.col {
+    padding: 0 !important;
+}	
+.navbar {
+    background: #231F20;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid #dfe3e8;
+    border-radius: 0;
+}
+.navbar .navbar-brand, .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+    padding-left: 0;
+    font-size: 20px;
+    padding-right: 50px;
+}
+.navbar .navbar-brand b {
+    font-weight: bold;
+    color: #29aafe;;		
+}
+.navbar .nav li {
+    position: relative;
+}
+.navbar .nav li a, .navbar-light .navbar-brand {
+    color: #fff !important;
+}
+.navbar .navbar-right li:first-child a {
+    padding-right: 30px;
+}
+
+#login-page nav.navbar{
+    background: transparent;
+    z-index: 1030;
+}
+
+.landing-home {
+    background: linear-gradient(to right, rgba(0,0,0, 0.7) , rgba(0,0,0, 0.7)), url(../images/bg/bg-1.jpg) fixed no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.landing-home .wrapper {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.intro-texts{
+    color: #fff;
+    font-size: 14px;
+    transform: translateY(100px);
+  }
+  
+  .intro-texts h1{
+    font-family: 'Agency FB', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  
+  .intro-texts button{
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 8px 20px;
+    width: 150px;
+  }
+  
+  .intro-texts button::before{
+    content: none;
+  }
+  
+/* Registration */
+
+.reg-form-container{
+    background: #fff;
+    box-shadow: 0 0 35px rgba(0,0,0, .4);
+    padding: 40px 40px 40px 60px;
+    border-radius: 6px;
+    position: relative;
+    min-height: 560px;
+    z-index: 10;
+  }
+  
+  .reg-form-container::before{
+    content: "";
+    background: rgba(255,255,255, .1);
+    width: 95%;
+    height: 70%;
+    border-radius: 6px;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -2;
+  }
+  
+  .reg-form-container::after{
+    content: "";
+    background: rgba(255,255,255, .1);
+    width: 90%;
+    height: 65%;
+    border-radius: 6px;
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+  
+  .form-registration .form-row {
+    margin-bottom: 10px;
+}
+
+/*Social Links Bottom*/
+
+ul.social-icons{
+    text-align: center;
+    margin-top: 15px;
+    z-index: 11;
+  }
+  ul.social-icons li{
+    border: none;
+  }  
+  ul.social-icons li{
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f1f2f2;
+    border-radius: 4px;
+    margin: 3px;
+    text-align: center;
+  }
+
+  ul.social-icons li a{
+    color: #6d6e71;
+    font-size: 15px;
+    line-height: 30px;
+  }
+  
+  ul.social-icons li a:hover{
+    color: #27aae1;
+    transition: all 1s;
+  } 
+

@@ -1,0 +1,38 @@
+<div class="border rounded bg-white mb-3">
+    <div class="box-title border-bottom p-3">
+        <h6 class="m-0">Dados Pessoais</h6>
+        <p class="mb-0 mt-0 small">Adicione seus dados aqui</p>
+    </div>
+    <div class="box-body">
+        <form action="/user/updateresidentialinfo" method="POST">
+        <div class="p-3 border-bottom">
+            <div class="position-relative icon-form-control mb-1">
+                <input placeholder="CEP" type="text" name="ri_cep" class="form-control" value="{{residentialInfo.cep}}">
+            </div>
+            <div class="position-relative icon-form-control mb-1">
+                <input placeholder="Logradouro" type="text" name="ri_place" class="form-control" value="{{residentialInfo.place}}">
+            </div>
+            <div class="position-relative icon-form-control mb-1">
+                <input placeholder="Número" type="text" name="ri_number" class="form-control" value="{{residentialInfo.number}}">
+            </div>
+            <div class="position-relative icon-form-control mb-1">
+                <input placeholder="Complemento" type="text" name="ri_complement" class="form-control" value="{{residentialInfo.complement}}">
+            </div>
+            <div class="position-relative icon-form-control mb-1">
+                <input placeholder="Bairro" type="text" name="ri_neighborhood" class="form-control" value="{{residentialInfo.neighborhood}}">
+            </div>
+            <div class="position-relative icon-form-control mb-1">
+                <input placeholder="Cidade" type="text" name="ri_city" class="form-control" value="{{residentialInfo.city}}">
+            </div>
+            <div class="position-relative icon-form-control mb-1">
+                <input placeholder="Estado" type="text" name="ri_state" class="form-control" value="{{residentialInfo.state}}">
+            </div>
+        </div>
+        <div class="overflow-hidden text-center p-3">
+            <button class="font-weight-bold btn btn-light rounded p-3" type="submit">
+                Atualizar Meus Dados
+            </button>
+        </div>
+        </form>
+    </div>
+</div>

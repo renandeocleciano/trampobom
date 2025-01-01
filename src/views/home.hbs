@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TrampoBom" />
+  <meta name="keywords" content="TrampoBom" />
+  <meta name="robots" content="index, follow" />
+
+  <title>TrampoBom | Destaque-se dos concorrentes</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<header id="login-page">
+	<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+		<div class="navbar-header d-flex col">
+			<a class="navbar-brand" href="#">Trampo<b>BOM</b></a>  		
+			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
+				<span class="navbar-toggler-icon"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+			<ul class="nav navbar-nav navbar-right ml-auto">			
+				<li class="nav-item">
+					<form method="POST" action="/auth/login">
+					<div class="form-row">
+						<div class="col">
+							<input type="text" class="form-control" placeholder="E-mail" required="required" name="login_email">
+						</div>
+						<div class="col">
+							<input type="password" class="form-control" placeholder="Senha" required="required" name="login_password">
+						</div>
+						<button class="btn btn-primary" type="submit">Login</button>
+					</div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+<div class="landing-home">
+  <div class="container wrapper">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="intro-texts">
+            <h1 class="text-white">Conquiste a posição tão sonhada!!!</h1>
+            <p>Crie curriculos incríveis totalmente de graça com a TrampoBom!</p>
+			<p>Exporte-os para .pdf de forma totalmente gratuita, sem enganação e propagandas ou 
+				Disponibilize seu currículo on-line se preferir.
+			</p>
+			<p>Seja indicado por amigos com o nosso programa de indicação</p>
+			<p>Ajudamos HeadHunter`s a te encontrar!</p>
+			<p>Está esperando o que? Se cadastre e boa sorte!</p>
+          </div>
+      </div>
+      <div class="col-sm-6 col-sm-offset-1">
+		  <div class="reg-form-container">
+			  <div class="row">
+				  <img src="/images/logo.png" class="margin-zero"/>
+				  <div class="col-md-12">
+ 						<h3>Cadastre-se Agora!!!</h3>
+						 <p class="text-muted">Quer algo novo da sua carreira? Nós podemos te ajudar.</p>
+				  </div>
+			  </div>
+				<form class="form-registration" method="POST" action="/auth/register">
+					<div class="form-row">
+						<div class="col">
+							<input type="text" class="form-control" placeholder="Nome" name="reg_first_name" required>
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" placeholder="Sobrenome" name="reg_last_name" required>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col">
+							<input type="email" class="form-control" placeholder="E-mail" name="reg_email" required>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col">
+							<input type="password" class="form-control" placeholder="Senha" name="reg_password" required>
+						</div>
+					</div>
+					<div class="form-row">
+						<p class="birth"><strong>Data de Aniversário</strong></p>
+						<br></br>
+						<div class="col">
+							<input type="number" class="form-control" placeholder="Dia" name="reg_day">
+						</div>
+						<div class="col">
+							<input type="number" class="form-control" placeholder="Mes" name="reg_month">
+						</div>
+						<div class="col">
+							<input type="number" class="form-control" placeholder="Ano" name="reg_year">
+						</div>
+					</div>
+					<button class="btn btn-primary">Cadastrar Agora!</button>
+				</form>
+				<div class="or-seperator"><b>ou</b></div>
+				<div class="row">
+					<div class="col-sm-12 col-sm-offset-6">
+						<ul class="list-inline social-icons">
+							<li>
+								<a href="#">
+									<i class="fa fa-facebook"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-linkedin"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-google"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+		  </div>
+      </div>
+    </div>
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-6">
+			 {{#if errors}}
+          		<p class="text-white">Ops! Tivemos um problema: {{ errors }}</p>
+        	{{/if}}
+		</div>
+	</div>
+  </div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script>
+    $(document).on("click", ".navbar-right .dropdown-menu", function(e){
+		  e.stopPropagation();
+	  });
+  </script>
+</body>
+
+</html>

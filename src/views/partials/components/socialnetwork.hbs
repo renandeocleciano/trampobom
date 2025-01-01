@@ -1,0 +1,33 @@
+<div class="border rounded bg-white mb-3">
+    <div class="box-title border-bottom p-3">
+        <h6 class="m-0">Redes Sociais</h6>
+        <p class="mb-0 mt-0 small">Adicione suas redes aqui
+        </p>
+    </div>
+    <div class="box-body">
+        <form action="/user/updatesocial" method="POST">
+        <div class="p-3 border-bottom">
+            <div class="position-relative icon-form-control mb-2">
+                <input placeholder="LinkedIn link" type="text" name="sn_linkedin" class="form-control" value="{{social.linkedin}}">
+            </div>
+            <div class="position-relative icon-form-control mb-2">
+                <input placeholder="Facebook link" type="text" name="sn_facebook" class="form-control" value="{{social.facebook}}">
+            </div>
+            <div class="position-relative icon-form-control mb-2">
+                <input placeholder="Site Pessoal link" type="text" name="sn_site" class="form-control" value="{{social.site}}">
+            </div>
+            <div class="position-relative icon-form-control mb-2">
+                <input placeholder="Youtube link" type="text" name="sn_youtube" class="form-control" value="{{social.youtube}}">
+            </div>
+            <div class="position-relative icon-form-control mb-0">
+                <input placeholder="Github link" type="text" name="sn_github" class="form-control" value="{{social.github}}">
+            </div>
+        </div>
+        <div class="overflow-hidden text-center p-3">
+            <button class="font-weight-bold btn btn-light rounded p-3" type="submit">
+                Atualizar Redes
+            </button>
+        </div>
+        </form>
+    </div>
+</div>
